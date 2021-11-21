@@ -10,3 +10,21 @@ Junto com o objetivo de ter uma API REST, eu **pretendo***  ter uma API Rest com
 Ferramentas utilizadas : Java SE 17, Spring, Spring Data, Spring Boot, PostgreSQL, Maven
 
 Favor chegar [application.properties](https://github.com/jonahanzen/Produto-REST/blob/master/src/main/resources/application.properties) para detalhes do banco, para rodar o projeto.
+
+### Endpoints
+
+Observação : Optei por parametrizar os endpoints por variável de caminho, então as urls não estão no corpo ou como parametros, mas como caminhos mesmo, ex : POST : localhost:8080/api/v1/produto/1/televisao/3500,   levei em consideração que fica "mais didático" dessa forma.
+
+- GET :
+    - /produto : Consulta todos os produtos
+	- /produto/id : Consulta o produto por id 
+	- /produto/nome : Consulta o produto que conter o que for no nome, ignorando case / **A ser implementado**
+
+- POST : 
+    - /produto/nome/preco : cria um novo produto com o nome e preço 
+
+- PUT :
+    - /produto/id/nome/preco : Altera os dados do produto a partir do id fornecido
+	
+- DELETE :
+    - /produto/id : Deleta o produto por id
