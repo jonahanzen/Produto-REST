@@ -28,7 +28,9 @@ public class ProdutoController {
 	private ProdutoService produtoService;
 
 	@GetMapping(path = {"/produto/{id}","/produto"})
-	public List<Produto> produtoId(@RequestParam(required = false) Long id) {
+	public List<Produto> produtoId(@PathVariable(required = false) Long id) {
+		// se id for diferente de nulo, retorna consulta do produto
+		// com o id, senao retorna todos os produtos
 		if (id != null) {
 			return List.of(produtoService.consultarProdutoId(id).orElse(null));
 		} else {
@@ -36,9 +38,11 @@ public class ProdutoController {
 		}
 	}
 
-	@PostMapping("/produto")
-	public Produto novoProduto(@Valid @RequestBody Produto produto) {
-		return produtoService.novoProduto(produto);
+	@PostMapping("/produto/{nome}/{preco}")
+	public Produto novoProduto(
+			@PathVariable String nome,
+			@PathVariable Double preco) {
+		return produtoService.novoProduto(nome,preco);
 	}
 
 	@PutMapping(path = "/produto/{id}/{nome}/{preco}")

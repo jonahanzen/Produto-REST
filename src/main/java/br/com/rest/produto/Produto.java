@@ -37,6 +37,14 @@ public class Produto {
 		this.nome = nome;
 		this.preco = preco;
 	}
+	
+	
+
+	public Produto(@NotNull @Length(min = 5, max = 50) String nome, @NotNull @Min(0) Double preco) {
+		super();
+		this.nome = nome;
+		this.preco = preco;
+	}
 
 	public String getNome() {
 		return nome;
