@@ -8,6 +8,12 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * Service com a 'logica de negocio' de {@link Produto}
+ * @see Service
+ *  
+ *
+ */
 @Service
 public class ProdutoService {
 
@@ -37,6 +43,7 @@ public class ProdutoService {
 	}
 
 	public void editarProduto(Long idProduto, Produto novoProduto) {
+		//TODO tratar excecao e/ou mudar comportamento caso nao ache o produto por id
 		produto = produtoRepository.findById(idProduto).orElse(null);
 		produto = novoProduto;
 		produtoRepository.save(produto);

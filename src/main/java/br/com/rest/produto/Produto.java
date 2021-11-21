@@ -9,6 +9,10 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 
+/**
+ * Classe entidade com os atributos de Produto
+ *
+ */
 @Entity
 public class Produto {
 
