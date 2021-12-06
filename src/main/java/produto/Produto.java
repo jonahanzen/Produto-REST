@@ -1,49 +1,47 @@
-package br.com.rest.produto;
+package produto;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
-import org.hibernate.validator.constraints.Length;
-
-/**
- * Classe entidade com os atributos de Produto
- *
- */
 @Entity
 public class Produto {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Integer id;
 
-	@NotNull
-	@Length(min = 5, max = 50)
+	@Size(min = 5, max = 50)
 	private String nome;
 
-	@NotNull
 	@Min(0)
 	private Double preco;
 
 	public Produto() {
 	}
 
-	public Produto(Long id, @NotNull @Length(min = 5, max = 50) String nome, @NotNull @Min(0) Double preco) {
+	public Produto(Integer id, @Size(min = 5, max = 50) String nome, @Min(0) Double preco) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.preco = preco;
 	}
-	
-	
 
-	public Produto(@NotNull @Length(min = 5, max = 50) String nome, @NotNull @Min(0) Double preco) {
+	public Produto(@Size(min = 5, max = 50) String nome, @Min(0) Double preco) {
 		super();
 		this.nome = nome;
 		this.preco = preco;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getNome() {
@@ -62,8 +60,9 @@ public class Produto {
 		this.preco = preco;
 	}
 
-	public Long getId() {
-		return id;
+	@Override
+	public String toString() {
+		return "Produto [id=" + id + ", nome=" + nome + ", preco=" + preco + "]";
 	}
 
 }
