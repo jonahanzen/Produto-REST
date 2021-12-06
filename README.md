@@ -9,7 +9,7 @@ Junto com o objetivo de ter uma API REST, eu **pretendo***  ter uma API Rest com
 
 Ferramentas utilizadas : Java SE 17, Spring, Spring Data, Spring Boot, PostgreSQL, Maven
 
-Favor chegar [application.properties](https://github.com/jonahanzen/Produto-REST/blob/master/src/main/resources/application.properties) para detalhes do banco, para rodar o projeto.
+Favor checar [application.properties](https://github.com/jonahanzen/Produto-REST/blob/master/src/main/resources/application.properties) para detalhes do banco, para rodar o projeto.
 
 ### Endpoints
 
@@ -28,3 +28,10 @@ Observação : Optei por parametrizar os endpoints por variável de caminho, ent
 	
 - DELETE :
     - /produto/id : Deleta o produto por id
+
+### Configuração por Branch
+
+- master
+    - Java SE 17, Spring, Spring Data, Spring Boot, PostgreSQL, Maven, Apache Tomcat
+- jakartaee
+    - Java SE 11, Java EE 8, JUnit 5 , PostgreSQL, Maven, WildFly
